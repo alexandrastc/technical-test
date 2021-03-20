@@ -1,5 +1,12 @@
 ## PHP 5.6 project bootstrap: 
 
+> Note: I have changed one line of code in the original project as the query didn't produce any results and it didn't seem like that was the indended purpose. 
+
+The query in question is:   $query = 'SELECT * FROM option WHERE name = \'price\''; 
+
+I have changed it to $query = 'SELECT * FROM database.option WHERE name = \'price\'';  in order to produce results. 
+It was not working because 'option' is a reserved SQL keyword (https://en.wikipedia.org/wiki/SQL_reserved_words). 
+
 - Assume Docker, docker-compose is installed on local machine 
 ```
 $ docker version
@@ -58,3 +65,12 @@ $ docker-compose version
 ```
 	docker-compose down
 ```
+
+## Using Symfony 3.4 
+
+For the PHP 7.4 project I would like to start off with Symfony 3.4 ( on a machine with php version 7.4 ) as Symfony 3.4 is the latest version compatible with 5.6 and Symfony 4 has a minimum requirement of PHP 7.1, so any further release will not work on a PHP 5 machine. 
+
+After creating the Symfony 3.4 project, it can be upgraded via composer to 4.4 once the server's PHP version is upgraded to 7.1+. 
+
+## Installation instructions for new project 
+

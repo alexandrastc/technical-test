@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_URI'] === '/time') {
 } elseif ($_SERVER['REQUEST_URI'] === '/price') {
     include('Main_host.php');
     $host = new Main_host();
-    $query = 'SELECT * FROM option WHERE name = \'price\'';
+    $query = 'SELECT * FROM database.option WHERE name = \'price\'';
     $result = mysqli_query($host->link, $query);
     if ($result) {
         $row = mysqli_fetch_assoc($result);
