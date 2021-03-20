@@ -74,3 +74,22 @@ After creating the Symfony 3.4 project, it can be upgraded via composer to 4.4 o
 
 ## Installation instructions for new project 
 
+- Navigate to the new-project folder in the repository 
+
+- I've added the Docker files needed for the Symfony 3.4 with PHP 7.4 project 
+
+- In order to build + start up the environment, run: 
+```
+	docker-compose build
+	docker-compose up
+```
+
+- I created the Symfony project using the following command (https://symfony.com/doc/3.4/setup.html): 
+```	
+	 composer create-project symfony/framework-standard-edition symfony
+```
+
+- Ran composer install 
+```
+	docker run --rm --interactive --tty --volume ${pwd}:/app composer install
+```	
