@@ -38,6 +38,8 @@ RUN apt-get update \
     php-imagick \
     php-redis \
     php-xdebug \
+    php7.4-common \
+    php7.4-mysql \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 COPY etc /etc
@@ -52,5 +54,3 @@ RUN usermod -u 1000 www-data \
 RUN wget https://get.symfony.com/cli/installer -O - | bash \
     && mv /root/.symfony/bin/symfony /usr/local/bin/symfony \
     && chown www-data /usr/local/bin/symfony
-
-RUN chmod -R 777 /var/www/symfony/var/cache  /var/www/symfony/var/logs

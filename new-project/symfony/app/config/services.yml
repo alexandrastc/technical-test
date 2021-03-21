@@ -29,7 +29,7 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
-    # add more services, or override services that need manual wiring
-    # AppBundle\Service\ExampleService:
-    #     arguments:
-    #         $someArgument: 'some_value'
+    FinanceBundle\Repository\ArticleRepository:
+        factory: doctrine.orm.entity_manager:getRepository
+        arguments:
+            - FinanceBundle\Entity\Article
