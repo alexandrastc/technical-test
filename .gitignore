@@ -1,3 +1,6 @@
  **/dump
  new-project/.cache
  new-project/.symfony
+ new-project/symfony/.idea
+ new-project/symfony/var/cache/*
+ new-project/symfony/var/logs/*
