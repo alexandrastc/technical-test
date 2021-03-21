@@ -22,7 +22,7 @@ class ArticleService
     }
 
     /**
-     * Get the last Article ordered by live date DESC 
+     * Get the last Article ordered by live date DESC
      * @return Article|null
      */
     public function getLatestArticleByLiveDate()
