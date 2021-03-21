@@ -93,3 +93,12 @@ After creating the Symfony 3.4 project, it can be upgraded via composer to 4.4 o
 ```
 	docker run --rm --interactive --tty --volume ${pwd}:/app composer install
 ```	
+
+## Migration plan  
+For the migration process I would consider the following options: 
+
+	- For an API used by other applications I would consider switching to the new application one route at a time, so if something goes wrong it's easy to identify and fix the issue
+
+	- In this situation with a website with static pages, in order to switch to PHP 7.4 with Symfony 4 I would create a new Symfony 4 project and move across the code from the Symfony 3.4 project ( just the Controllers, Services + Entities ). 
+	
+	- Then I would create unit tests that have 100% coverage to test the functionality of each function and ideally I would consider having a load balancer before the new application and the existing one, so in the worst case scenario where something fails, it won't fail for everyone trying to access resources 
