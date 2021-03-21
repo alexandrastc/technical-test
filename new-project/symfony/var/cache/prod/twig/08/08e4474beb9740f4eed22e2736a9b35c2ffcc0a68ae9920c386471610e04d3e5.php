@@ -21,10 +21,6 @@ class __TwigTemplate_fa912a47981fe3c7ad6cb42ae07b6b6de187ac11929db95b137a90763a6
         $this->parent = false;
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
-            'stylesheets' => [$this, 'block_stylesheets'],
-            'body' => [$this, 'block_body'],
-            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -37,48 +33,21 @@ class __TwigTemplate_fa912a47981fe3c7ad6cb42ae07b6b6de187ac11929db95b137a90763a6
         <meta charset=\"UTF-8\" />
         <title>";
         // line 5
-        $this->displayBlock('title', $context, $blocks);
+        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
         echo "</title>
-        ";
-        // line 6
-        $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("favicon.ico"), "html", null, true);
-        echo "\" />
     </head>
     <body>
-        ";
-        // line 10
-        $this->displayBlock('body', $context, $blocks);
-        // line 11
-        echo "        ";
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 12
-        echo "    </body>
+        <h1>";
+        // line 8
+        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
+        echo "</h1>
+        <p>";
+        // line 9
+        echo twig_escape_filter($this->env, ($context["outputData"] ?? null), "html", null, true);
+        echo "</p>
+    </body>
 </html>
 ";
-    }
-
-    // line 5
-    public function block_title($context, array $blocks = [])
-    {
-        echo "Welcome!";
-    }
-
-    // line 6
-    public function block_stylesheets($context, array $blocks = [])
-    {
-    }
-
-    // line 10
-    public function block_body($context, array $blocks = [])
-    {
-    }
-
-    // line 11
-    public function block_javascripts($context, array $blocks = [])
-    {
     }
 
     public function getTemplateName()
@@ -93,7 +62,7 @@ class __TwigTemplate_fa912a47981fe3c7ad6cb42ae07b6b6de187ac11929db95b137a90763a6
 
     public function getDebugInfo()
     {
-        return array (  80 => 11,  75 => 10,  70 => 6,  64 => 5,  58 => 12,  55 => 11,  53 => 10,  46 => 7,  44 => 6,  40 => 5,  34 => 1,);
+        return array (  46 => 9,  42 => 8,  36 => 5,  30 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

@@ -52,3 +52,5 @@ RUN usermod -u 1000 www-data \
 RUN wget https://get.symfony.com/cli/installer -O - | bash \
     && mv /root/.symfony/bin/symfony /usr/local/bin/symfony \
     && chown www-data /usr/local/bin/symfony
+
+RUN chmod -R 777 /var/www/symfony/var/cache  /var/www/symfony/var/logs
